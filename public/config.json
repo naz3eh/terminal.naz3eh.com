@@ -1,0 +1,55 @@
+{
+  "ascii": [
+    "  _   _    _    __________  ____  _   _ ",
+    " | \\ | |  / \\  |__  / ____||  __|| | | |",
+    " |  \\| | / _ \\   / /|  _|  | |_  | |_| |",
+    " | |\\  |/ ___ \\ / /_| |___ |  _| |  _  |",
+    " |_| \\_/_/   \\_/____|_____||____||_| |_|",
+    "                                         "
+  ],
+  "title": "nazeeh@terminal",
+  "name": "Nazeeh",
+  "username": "guest",
+  "hostname": "naz3eh.com",
+  "password": "sudo",
+  "repo": "https://github.com/naz3eh/terminal.naz3eh.com",
+  "social": {
+    "email": "hello@naz3eh.com",
+    "github": "naz3eh",
+    "linkedin": "nazeeh",
+    "twitter": "nazeeh",
+    "youtube": "naz3eh",
+    "instagram": "naz3eh"
+  },
+  "about": "Hey! I'm Nazeeh (pronounced /nə-'ziː/, like \"Na-zee\"). I'm a software engineer working at Fuel Network, where I focus on building devtools, documentation, and helping developers build cool things. When I'm not coding, you'll find me watching Formula 1, traveling the world, or capturing moments through my camera. I also create video tutorials and vlogs to share what I learn and experience.",
+  "projects": [
+    {
+      "name": "naz3eh.com",
+      "description": "My personal portfolio website built with React and TypeScript",
+      "link": "https://naz3eh.com"
+    },
+    {
+      "name": "Fuel Network DevTools",
+      "description": "Developer tools and documentation for the Fuel blockchain",
+      "link": "https://docs.fuel.network"
+    },
+    {
+      "name": "YouTube Tutorials",
+      "description": "Video tutorials on web3, blockchain, and development",
+      "link": "https://youtube.com/@naz3eh"
+    },
+    {
+      "name": "Travel Vlogs",
+      "description": "Unfiltered travel stories and adventures",
+      "link": "https://youtube.com/@naz3ehUnfiltered"
+    }
+  ],
+  "colors": {
+    "background": "#0d0d0d",
+    "foreground": "#e0e0e0",
+    "prompt": "#EE2B2B",
+    "accent": "#ff00ff",
+    "error": "#ff4444",
+    "link": "#00d4ff"
+  }
+}
