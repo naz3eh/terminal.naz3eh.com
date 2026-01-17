@@ -182,6 +182,10 @@
   line-height: 1.2;
 }
 
+.link-line {
+  padding-left: 5ch;
+}
+
 .link-line a {
   color: var(--color-link);
   text-decoration: none;
@@ -193,34 +197,70 @@
   text-shadow: 0 0 8px var(--color-link);
 }
 
+.social-line {
+  padding-left: 2ch;
+}
+
+.social-line .social-label {
+  color: var(--color-foreground);
+}
+
+.social-line a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.social-line a:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 8px var(--color-link);
+}
+
 /* Current Input Line */
 .input-line.current {
   position: relative;
 }
 
-.terminal-input {
+.input-wrapper {
   flex: 1;
+  position: relative;
+}
+
+.terminal-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   background: transparent;
   border: none;
   outline: none;
-  color: var(--color-foreground);
+  box-shadow: none;
+  color: transparent;
   font-family: inherit;
   font-size: inherit;
-  caret-color: var(--color-prompt);
+  caret-color: transparent;
 }
 
-.cursor {
+.terminal-input:focus,
+.terminal-input:focus-visible {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.input-mirror {
+  display: inline;
+  color: var(--color-foreground);
+  white-space: pre;
+}
+
+.block-cursor {
   display: inline-block;
-  width: 8px;
+  width: 0.6em;
   height: 1.2em;
   background-color: var(--color-prompt);
+  vertical-align: text-bottom;
   animation: cursor-blink 1s step-end infinite;
-  margin-left: -8px;
-  opacity: 0;
-}
-
-.terminal-input:focus + .cursor {
-  opacity: 1;
 }
 
 @keyframes cursor-blink {

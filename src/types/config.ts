@@ -38,7 +38,7 @@ export interface Config {
 
 export interface TerminalLine {
   id: string;
-  type: 'input' | 'output' | 'error' | 'system' | 'ascii' | 'link';
+  type: 'input' | 'output' | 'error' | 'system' | 'ascii' | 'link' | 'social';
   content: string;
   prompt?: string;
   href?: string;

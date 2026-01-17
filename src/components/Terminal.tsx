@@ -24,6 +24,7 @@ export const Terminal = ({ config }: TerminalProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
   const cancelRef = useRef(false);
+  const bootStartedRef = useRef(false);
 
   const currentColors = getTheme(theme, config.colors);
 
@@ -76,7 +77,8 @@ export const Terminal = ({ config }: TerminalProps) => {
 
   // Boot sequence
   useEffect(() => {
-    if (booted) return;
+    if (booted || bootStartedRef.current) return;
+    bootStartedRef.current = true;
 
     const bootMessages: TerminalLine[] = [
       { id: 'boot-1', type: 'system', content: 'Initializing terminal...' },
@@ -236,6 +238,17 @@ export const Terminal = ({ config }: TerminalProps) => {
             </a>
           </div>
         );
+      case 'social': {
+        const [label, linkText] = line.content.split('|');
+        return (
+          <div key={line.id} className="terminal-line social-line">
+            <span className="social-label">{label}</span>
+            <a href={line.href} target="_blank" rel="noopener noreferrer">
+              {linkText}
+            </a>
+          </div>
+        );
+      }
       default:
         return null;
     }
@@ -258,18 +271,23 @@ export const Terminal = ({ config }: TerminalProps) => {
         {lines.map(renderLine)}
         <div className="terminal-line input-line current">
           <span className="prompt">{prompt}</span>
-          <input
-            ref={inputRef}
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKeyDown}
-            className="terminal-input"
-            autoFocus
-            spellCheck={false}
-            autoComplete="off"
-          />
-          <span className="cursor"></span>
+          <div className="input-wrapper">
+            <input
+              ref={inputRef}
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              className="terminal-input"
+              autoFocus
+              spellCheck={false}
+              autoComplete="off"
+            />
+            <span className="input-mirror">
+              {input}
+              <span className="block-cursor"></span>
+            </span>
+          </div>
         </div>
       </div>
       {hackerMode && <div className="scanlines"></div>}
